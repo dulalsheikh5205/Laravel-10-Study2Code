@@ -10,7 +10,10 @@ class WeatherController extends Controller
     //     return "weather in {$city} is good";
     // }
 
-    function getWeather($city = 'ABCD'){
+    function getWeather($city = null){
+        if(!$city){
+            return "Please mention a city";
+        }
         return "weather in {$city} is good";
     }
 }
