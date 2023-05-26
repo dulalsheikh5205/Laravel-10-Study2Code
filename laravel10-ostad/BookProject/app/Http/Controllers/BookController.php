@@ -28,4 +28,8 @@ class BookController extends Controller
             'title'=>'To kill a Mockingbird'
         ]
     ];
+
+    function books(){
+        return $this->books;
+    }
 }
