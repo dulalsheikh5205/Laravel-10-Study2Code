@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 // hasinHyder module-13
 Route::get('/books',[BookController::class,'books']);
+Route::get('/books/{id}',[BookController::class,'getBook']);

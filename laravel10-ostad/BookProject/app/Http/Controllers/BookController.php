@@ -32,4 +32,8 @@ class BookController extends Controller
     function books(){
         return $this->books;
     }
+
+    function getBook($id){
+        return $id;
+    }
 }
