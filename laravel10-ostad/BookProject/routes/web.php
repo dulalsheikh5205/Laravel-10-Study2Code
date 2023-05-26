@@ -20,12 +20,20 @@ Route::get('/', function () {
 });
 
 // hasinHyder module-13
-Route::get('/books',[BookController::class,'books']);
-Route::get('/books/{id}',[BookController::class,'getBook']);
-Route::get('/books/{id}',[BookController::class,'getBook'])->whereNumber('id');
-Route::get('/books/{id}/{field}',[BookController::class,'getBookField']);
+// Route::get('/books',[BookController::class,'books']);
+// Route::get('/books/{id}',[BookController::class,'getBook']);
+// Route::get('/books/{id}',[BookController::class,'getBook'])->whereNumber('id');
+// Route::get('/books/{id}/{field}',[BookController::class,'getBookField']);
 // Route::get('/books/{id}/author',[BookController::class,'getBookAuthor']);
 // Route::get('/books/{id}/title',[BookController::class,'getBookTitle']);
 
 // Route::get('/weather/{city}',[WeatherController::class,'getWeather']);
 Route::get('/weather/{city?}',[WeatherController::class,'getWeather']); // optional parameter
+
+
+// group
+Route::controller(BookController::class)->group(function(){
+    Route::get('/books','books');
+    Route::get('/books/{id}','getBook');
+    Route::get('/books/{id}/{field}','getBookField');
+});
