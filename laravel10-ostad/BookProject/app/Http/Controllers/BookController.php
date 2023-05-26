@@ -38,16 +38,22 @@ class BookController extends Controller
         $bookId = $id - 1;
         return $this->books[$bookId];
     }
-
-    function getBookAuthor($id){
-        // return $id;
+    function getBookField($id, $field){ // আমরা route এর মধ্যে যত parameter ধরবো, ঠিক তেমনি function এর মধ্যে তত parameter argument হিসেবে ধরতে হবে
         $bookId = $id - 1;
-        return $this->books[$bookId]['author'];
+        $book = $this->books[$bookId];
+        return $book[$field];
     }
 
-    function getBookTitle($id){
-        // return $id;
-        $bookId = $id - 1;
-        return $this->books[$bookId]['title'];
-    }
+    // function getBookAuthor($id){
+    //     // return $id;
+    //     $bookId = $id - 1;
+    //     return $this->books[$bookId]['author'];
+    // }
+
+    // function getBookTitle($id){
+    //     // return $id;
+    //     $bookId = $id - 1;
+    //     return $this->books[$bookId]['title'];
+    // }
+
 }
