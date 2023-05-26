@@ -21,3 +21,5 @@ Route::get('/', function () {
 // hasinHyder module-13
 Route::get('/books',[BookController::class,'books']);
 Route::get('/books/{id}',[BookController::class,'getBook']);
+Route::get('/books/{id}/author',[BookController::class,'getBookAuthor']);
+Route::get('/books/{id}/title',[BookController::class,'getBookTitle']);
