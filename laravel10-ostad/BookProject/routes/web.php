@@ -27,4 +27,5 @@ Route::get('/books/{id}/{field}',[BookController::class,'getBookField']);
 // Route::get('/books/{id}/author',[BookController::class,'getBookAuthor']);
 // Route::get('/books/{id}/title',[BookController::class,'getBookTitle']);
 
-Route::get('/weather/{city}',[WeatherController::class,'getWeather']);
+// Route::get('/weather/{city}',[WeatherController::class,'getWeather']);
+Route::get('/weather/{city?}',[WeatherController::class,'getWeather']); // optional parameter
