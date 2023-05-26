@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,5 @@ Route::get('/books/{id}',[BookController::class,'getBook'])->whereNumber('id');
 Route::get('/books/{id}/{field}',[BookController::class,'getBookField']);
 // Route::get('/books/{id}/author',[BookController::class,'getBookAuthor']);
 // Route::get('/books/{id}/title',[BookController::class,'getBookTitle']);
+
+Route::get('/weather/{city}',[WeatherController::class,'getWeather']);
