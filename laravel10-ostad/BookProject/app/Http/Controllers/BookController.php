@@ -34,6 +34,8 @@ class BookController extends Controller
     }
 
     function getBook($id){
-        return $id;
+        // return $id;
+        $bookId = $id - 1;
+        return $this->books[$bookId];
     }
 }
