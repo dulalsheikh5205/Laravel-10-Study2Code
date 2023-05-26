@@ -36,4 +36,6 @@ Route::controller(BookController::class)->group(function(){
     Route::get('/books','books');
     Route::get('/books/{id}','getBook');
     Route::get('/books/{id}/{field}','getBookField');
+
+    Route::post('/books','CreateBook');
 });
