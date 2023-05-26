@@ -9,8 +9,8 @@ class WeatherController extends Controller
     // function getWeather($city){ // route এ যে কয়টা parameter ধরবেন, funciton এ ঠিক সেই কয়টা argument pass করতে হবে
     //     return "weather in {$city} is good";
     // }
-    
-    function getWeather($city = null){
+
+    function getWeather($city = 'ABCD'){
         return "weather in {$city} is good";
     }
 }
