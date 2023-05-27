@@ -56,8 +56,8 @@ class BookController extends Controller
     //     return $this->books[$bookId]['title'];
     // }
 
-    function createBook(){
-        return "new post request";
+    function createBook(Request $request){
+        // return "new post request";
          /* laravel এ যখন একটা নতুন post request তৈরি করবেন, তখন laravel কে বলে দিতে হবে- Insomnia or Postman, বাহিরে থেকে post করেন বা javascript থেকে post করেন ajax দিয়ে, তাহলে বলে দিতে হবে - এখানে csrf token check করবে না, csrf হচ্ছে special mechanism- laravel এটা দিয়ে check করে যে, আসলে আপনার request টা website থেকে আসলে কিনা, আমরা যখন javascript, api দিয়ে পাঠাচ্ছি অথবা postman বা Insomnia এ ধরনের tool দিয়ে request করতেছি, তখন তো request টা website তৈরি হচ্ছে না, বাহিরে থেকে আসতেছে, ওই সময় যাতে csrf token যাতে laravel check না করে,এটা specially বলে দিতে হয়, csrf হচ্ছে এক ধরনের  ciber attack prevent করার একটা technic,
             so, app=>HTTP=>middleware=>VerifyCsrfToken.php
             or ctrl+p = VerifyCsrfToken.php
@@ -67,6 +67,11 @@ class BookController extends Controller
             'books'
             ];
          */
+
+            $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
+            $title = $request->get('title');
+
+            return "Author = {$author} and Title = {$title}";
     }
 
 }
