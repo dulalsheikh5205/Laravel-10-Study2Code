@@ -68,10 +68,14 @@ class BookController extends Controller
             ];
          */
 
-            $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
-            $title = $request->get('title');
+            // $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
+            // $title = $request->get('title');
 
+            $author = request()->get('author');
+            $title = request()->get('title');
             return "Author = {$author} and Title = {$title}";
+
+            
     }
 
 }
