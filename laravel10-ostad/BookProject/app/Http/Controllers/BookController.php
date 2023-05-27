@@ -29,7 +29,9 @@ class BookController extends Controller
         ]
     ];
 
-    function books(){
+    function books(Request $request){
+        $limit = $request->query('limit');
+        return $limit;
         return $this->books;
     }
 
