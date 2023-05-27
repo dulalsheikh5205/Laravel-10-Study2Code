@@ -75,14 +75,27 @@ class BookController extends Controller
             ];
          */
 
-            // $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
-            // $title = $request->get('title');
+            $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
+            $title = $request->get('title');
 
-            $author = request()->get('author');
-            $title = request()->get('title');
+            // $author = request()->get('author');
+            // $title = request()->get('title');
             return "Author = {$author} and Title = {$title}";
 
             
     }
+
+    /* how you will accept header, which is needed for authentication
+    header হচ্ছে hidden information, একটা request এঁর মধ্যে hidden ভাবে, browser নিজেই sent করে প্রচুর header,আবার আপনি চাইলে postman,Insomnia,api লেখার সময় header send করতে পারেন, আপনি infact javascript দিয়ে যখন ajax post করতেছেন, তখনও header send করতে পারেন,বিশেয করে authentication করার সময় token send করতে হয়,user কে authenticate করানোর জন্য,serve কে চেনানোর জন্য এটা আসলে আমার কোন user,so header পাঠাইতেই হয়,এটা খুব common জিনিস,
+    */
+
+    function getHeader(Request $request){
+        $author = $request->get('author'); // get method এঁর মধ্যে 'author' or 'title' html form এঁর field থেকে data আসবে বা ধরবে
+        $title = $request->get('title');
+        $token = $request->header('token');
+
+        return "Author = {$author} and Title = {$title} and Token = {$token} ";
+    }
+
 
 }
