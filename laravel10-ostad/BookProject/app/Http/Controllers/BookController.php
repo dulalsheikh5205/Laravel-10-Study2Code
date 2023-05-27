@@ -30,9 +30,14 @@ class BookController extends Controller
     ];
 
     function books(Request $request){
-        $limit = $request->query('limit');
-        return $limit;
-        return $this->books;
+        $limit = $request->query('limit',0);
+        if($limit == 0){
+            return $this->books;
+        }else{
+            return array_splice($this->books,0,$limit);
+        }
+       
+        
     }
 
     function getBook($id){
